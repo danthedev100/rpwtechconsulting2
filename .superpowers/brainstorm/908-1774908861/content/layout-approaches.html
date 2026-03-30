@@ -1,0 +1,71 @@
+<h2>3 approaches to the single-page layout</h2>
+<p class="subtitle">Same content, different structure and emphasis. Which flow feels right?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="layout-a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1c2e;padding:16px;min-height:220px;font-family:monospace;">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="background:rgba(0,194,168,0.15);border-left:3px solid #00c2a8;color:#00c2a8;padding:5px 8px;font-size:9px;letter-spacing:1px;">① HERO — Bold headline + 3 service tags + CTA</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">② SERVICES — 3 cards: Technical · Asset Mgmt · Compliance</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">③ WHY RPW — 3–4 differentiator stats/statements</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">④ ABOUT RICHARD — Photo + bio + credentials</div>
+        <div style="background:rgba(0,194,168,0.1);border-left:3px solid #00c2a8;color:#00c2a8;padding:5px 8px;font-size:9px;">⑤ CONTACT — Form + email</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Classic Consultancy</h3>
+      <p>Services lead, then build trust, then reveal Richard, then convert. Logical top-down journey. Works well when the services are the primary draw.</p>
+      <div class="pros-cons" style="margin-top:8px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Familiar, expected structure</li><li>Services immediately visible</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Richard appears late in scroll</li><li>Less personal feel</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="layout-b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1c2e;padding:16px;min-height:220px;font-family:monospace;">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="background:rgba(0,194,168,0.15);border-left:3px solid #00c2a8;color:#00c2a8;padding:5px 8px;font-size:9px;letter-spacing:1px;">① HERO — Richard's photo + headline + CTA</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">② ABOUT RICHARD — Credentials, background, approach</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">③ SERVICES — 3 pillars expanded with bullet lists</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">④ HOW WE WORK — Process / engagement model</div>
+        <div style="background:rgba(0,194,168,0.1);border-left:3px solid #00c2a8;color:#00c2a8;padding:5px 8px;font-size:9px;">⑤ CONTACT — Form + email</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Authority-Led</h3>
+      <p>Richard is the brand — his face and credentials appear immediately. Suits boutique consultancies where trust in the individual matters most.</p>
+      <div class="pros-cons" style="margin-top:8px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Builds personal trust fast</li><li>Differentiates from big firms</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Needs good headshot to land</li><li>Services deeper in scroll</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="layout-c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f1c2e;padding:16px;min-height:220px;font-family:monospace;">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div style="background:rgba(0,194,168,0.15);border-left:3px solid #00c2a8;color:#00c2a8;padding:5px 8px;font-size:9px;letter-spacing:1px;">① HERO — Headline + subline + dual CTA</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">② PROBLEMS WE SOLVE — 3 pain point statements</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">③ SERVICES — 3 pillars with expandable detail</div>
+        <div style="background:rgba(255,255,255,0.05);border-left:3px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);padding:5px 8px;font-size:9px;">④ ABOUT RICHARD — Photo + bio + credentials</div>
+        <div style="background:rgba(0,194,168,0.1);border-left:3px solid #00c2a8;color:#00c2a8;padding:5px 8px;font-size:9px;">⑤ CONTACT — Form + email</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Problem-First</h3>
+      <p>Opens with the client's pain points before showing services. Makes visitors feel understood before pitching. Strong for mixed audiences — each group sees their problem named.</p>
+      <div class="pros-cons" style="margin-top:8px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Resonates with all 3 audience types</li><li>Strongest conversion logic</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Needs sharp copywriting</li><li>Slightly longer to reach services</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:16px;padding:12px;background:rgba(0,194,168,0.08);border-radius:6px;border:1px solid rgba(0,194,168,0.2);">
+  <span style="color:#00c2a8;font-size:10px;letter-spacing:1px;font-weight:700;">MY RECOMMENDATION</span>
+  <p style="color:rgba(255,255,255,0.7);font-size:12px;margin:4px 0 0;">Layout C — with the mixed audience (FM managers, property owners, contractors), leading with pain points ensures every visitor type immediately feels "this is for me" before the services pitch.</p>
+</div>
