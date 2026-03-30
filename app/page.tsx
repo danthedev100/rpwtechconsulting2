@@ -1,10 +1,11 @@
 import { Nav } from '@/components/Nav'
+import { Hero } from '@/components/Hero'
 
 export default function Home() {
   return (
     <main>
       <Nav />
-      <div className="h-screen bg-[#060810]" />
+      <Hero />
     </main>
   )
 }
