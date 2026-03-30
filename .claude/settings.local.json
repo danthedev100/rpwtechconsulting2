@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:rpwtechnicalconsulting.co.uk)",
+      "Bash(find C:/Users/danie/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/brainstorming -name *.sh)",
+      "Bash(bash \"C:/Users/danie/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.6/skills/brainstorming/scripts/start-server.sh\" --project-dir \"c:/dev/rpwtechconsulting2\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(mv media:*)",
+      "Bash(mv docs:*)",
+      "Bash(mv .superpowers /tmp/superpowers_backup)"
+    ]
+  }
+}
