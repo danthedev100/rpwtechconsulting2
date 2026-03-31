@@ -27,12 +27,11 @@ export function Nav() {
         {/* Logo */}
         <a href="#" aria-label="RPW Technical Consulting home">
           <Image
-            src="/media/logo-light.jpeg"
+            src="/media/logo-transparent.png"
             alt="RPW Technical Consulting (FM) Ltd"
-            width={160}
-            height={36}
-            className="h-8 w-auto"
-            style={{ mixBlendMode: 'screen' }}
+            width={220}
+            height={50}
+            className="h-11 w-auto"
             priority
           />
         </a>
