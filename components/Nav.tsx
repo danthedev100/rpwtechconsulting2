@@ -23,15 +23,15 @@ export function Nav() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-[1120px] mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-[1120px] mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" aria-label="RPW Technical Consulting home">
           <Image
             src="/media/logo-transparent.png"
             alt="RPW Technical Consulting (FM) Ltd"
-            width={220}
-            height={50}
-            className="h-11 w-auto"
+            width={440}
+            height={100}
+            className="h-20 w-auto"
             priority
           />
         </a>
