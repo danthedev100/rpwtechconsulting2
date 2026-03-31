@@ -47,7 +47,7 @@ export function Hero() {
           }`}
         >
           <div className="w-5 h-px bg-[#00c2a8]" />
-          <span className="text-[#00c2a8] text-[0.6rem] tracking-[0.3em] uppercase">
+          <span className="text-[#00c2a8] text-[0.75rem] tracking-[0.3em] uppercase">
             North-East England · Remote &amp; On-Site
           </span>
         </div>
@@ -77,7 +77,7 @@ export function Hero() {
 
         {/* Subline */}
         <p
-          className={`text-white/60 text-sm leading-relaxed max-w-lg mb-8 transition-all duration-700 ${
+          className={`text-white/60 text-base leading-relaxed max-w-lg mb-8 transition-all duration-700 ${
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ transitionDelay: '660ms' }}
@@ -96,13 +96,13 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="bg-[#00c2a8] text-[#0a0e1c] px-6 py-3 text-[0.7rem] font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(0,194,168,0.3)] transition-all duration-200"
+            className="bg-[#00c2a8] text-[#0a0e1c] px-6 py-3 text-sm font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(0,194,168,0.3)] transition-all duration-200"
           >
             Get in Touch
           </a>
           <a
             href="#services"
-            className="border border-white/25 text-white/80 px-6 py-3 text-[0.7rem] rounded-sm hover:border-white/50 hover:text-white transition-all duration-200"
+            className="border border-white/25 text-white/80 px-6 py-3 text-sm rounded-sm hover:border-white/50 hover:text-white transition-all duration-200"
           >
             View Services ↓
           </a>
@@ -119,14 +119,14 @@ export function Hero() {
             <div key={stat.label} className="flex items-center gap-6">
               {i > 0 && <div className="hidden sm:block w-px h-8 bg-white/[0.08]" />}
               <div>
-                <div className="text-[#00c2a8] text-xl font-extrabold leading-none mb-0.5">
+                <div className="text-[#00c2a8] text-2xl font-extrabold leading-none mb-0.5">
                   {stat.value !== null ? (
                     <CountUp end={stat.value} suffix={stat.suffix} />
                   ) : (
                     stat.display
                   )}
                 </div>
-                <div className="text-white/35 text-[0.55rem] tracking-[0.2em] uppercase">
+                <div className="text-white/35 text-[0.7rem] tracking-[0.2em] uppercase">
                   {stat.label}
                 </div>
               </div>

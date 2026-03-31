@@ -9,13 +9,13 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left: copy */}
           <FadeUp>
-            <p className="text-[#00c2a8] text-[0.6rem] tracking-[0.3em] uppercase font-bold mb-2">
+            <p className="text-[#00c2a8] text-[0.75rem] tracking-[0.3em] uppercase font-bold mb-2">
               Get in Touch
             </p>
-            <h2 className="text-white text-xl font-bold mb-5 leading-snug">
+            <h2 className="text-white text-2xl font-bold mb-5 leading-snug">
               Ready to discuss<br />your project?
             </h2>
-            <p className="text-white/45 text-sm leading-relaxed mb-8 max-w-sm">
+            <p className="text-white/45 text-base leading-relaxed mb-8 max-w-sm">
               Whether you need a compliance audit, asset strategy support, or specialist
               technical input — get in touch and Richard will respond within one business day.
             </p>
@@ -23,7 +23,7 @@ export function Contact() {
               <div className="w-1.5 h-1.5 rounded-full bg-[#00c2a8] flex-shrink-0" />
               <a
                 href="mailto:richard@rpwtechnicalconsulting.co.uk"
-                className="text-white/45 text-sm hover:text-white transition-colors duration-200"
+                className="text-white/45 text-base hover:text-white transition-colors duration-200"
               >
                 richard@rpwtechnicalconsulting.co.uk
               </a>

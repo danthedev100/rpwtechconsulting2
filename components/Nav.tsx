@@ -43,7 +43,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[0.625rem] tracking-[0.15em] text-white/40 hover:text-white transition-colors duration-200 relative group uppercase"
+              className="text-[0.8rem] tracking-[0.15em] text-white/40 hover:text-white transition-colors duration-200 relative group uppercase"
             >
               {link.label}
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#00c2a8] transition-all duration-200 group-hover:w-full" />
@@ -51,7 +51,7 @@ export function Nav() {
           ))}
           <a
             href="#contact"
-            className="bg-[#00c2a8] text-[#0a0e1c] px-4 py-2 text-[0.625rem] font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_4px_16px_rgba(0,194,168,0.35)] transition-all duration-200"
+            className="bg-[#00c2a8] text-[#0a0e1c] px-4 py-2 text-[0.8rem] font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_4px_16px_rgba(0,194,168,0.35)] transition-all duration-200"
           >
             Get in Touch
           </a>
@@ -101,7 +101,7 @@ export function Nav() {
           ))}
           <a
             href="#contact"
-            className="bg-[#00c2a8] text-[#0a0e1c] px-4 py-3 text-xs font-bold tracking-widest uppercase rounded-sm text-center hover:brightness-110 transition-all"
+            className="bg-[#00c2a8] text-[#0a0e1c] px-4 py-3 text-sm font-bold tracking-widest uppercase rounded-sm text-center hover:brightness-110 transition-all"
             onClick={() => setMenuOpen(false)}
           >
             Get in Touch

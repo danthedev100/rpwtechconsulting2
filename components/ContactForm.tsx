@@ -62,8 +62,8 @@ export function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <p className="text-white font-semibold text-lg">Message sent</p>
-        <p className="text-white/45 text-sm text-center max-w-xs">
+        <p className="text-white font-semibold text-xl">Message sent</p>
+        <p className="text-white/45 text-base text-center max-w-xs">
           Thank you for getting in touch. Richard will respond within one business day.
         </p>
       </div>
@@ -115,7 +115,7 @@ export function ContactForm() {
       />
 
       {state === 'error' && (
-        <p className="text-red-400 text-xs" role="alert">
+        <p className="text-red-400 text-sm" role="alert">
           {errorMsg}
         </p>
       )}
@@ -123,7 +123,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === 'loading'}
-        className="w-full bg-[#00c2a8] text-[#0a0e1c] py-3 text-[0.7rem] font-bold tracking-[0.15em] uppercase rounded-sm shadow-[0_4px_16px_rgba(0,194,168,0.2)] hover:brightness-110 hover:shadow-[0_8px_24px_rgba(0,194,168,0.35)] hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 transition-all duration-200"
+        className="w-full bg-[#00c2a8] text-[#0a0e1c] py-3 text-sm font-bold tracking-[0.15em] uppercase rounded-sm shadow-[0_4px_16px_rgba(0,194,168,0.2)] hover:brightness-110 hover:shadow-[0_8px_24px_rgba(0,194,168,0.35)] hover:scale-[1.01] disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100 transition-all duration-200"
       >
         {state === 'loading' ? (
           <span className="flex items-center justify-center gap-2">

@@ -30,10 +30,10 @@ export function WhyRPW() {
       <div className="max-w-[1120px] mx-auto">
         {/* Header */}
         <FadeUp className="text-center mb-12">
-          <p className="text-[#00c2a8] text-[0.6rem] tracking-[0.3em] uppercase font-bold mb-2">
+          <p className="text-[#00c2a8] text-[0.75rem] tracking-[0.3em] uppercase font-bold mb-2">
             Why RPW
           </p>
-          <h2 className="text-white text-xl font-bold">Independent. Pragmatic. Data-led.</h2>
+          <h2 className="text-white text-2xl font-bold">Independent. Pragmatic. Data-led.</h2>
         </FadeUp>
 
         {/* 2x2 grid */}
@@ -45,10 +45,10 @@ export function WhyRPW() {
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="text-white text-sm font-semibold mb-1.5 group-hover:text-white transition-colors duration-150">
+                  <h3 className="text-white text-base font-semibold mb-1.5 group-hover:text-white transition-colors duration-150">
                     {item.heading}
                   </h3>
-                  <p className="text-white/45 text-[0.8rem] leading-relaxed">{item.body}</p>
+                  <p className="text-white/45 text-sm leading-relaxed">{item.body}</p>
                 </div>
               </div>
             </FadeUp>

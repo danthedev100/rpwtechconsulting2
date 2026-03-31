@@ -30,15 +30,15 @@ export function About() {
 
             {/* Content */}
             <div className="flex-1">
-              <p className="text-[#00c2a8] text-[0.6rem] tracking-[0.3em] uppercase font-bold mb-1">
+              <p className="text-[#00c2a8] text-[0.75rem] tracking-[0.3em] uppercase font-bold mb-1">
                 About
               </p>
-              <h2 className="text-white text-xl font-extrabold mb-1">Richard Warren</h2>
-              <p className="text-white/35 text-[0.75rem] mb-5">
+              <h2 className="text-white text-2xl font-extrabold mb-1">Richard Warren</h2>
+              <p className="text-white/35 text-sm mb-5">
                 Independent Lead Consultant · RPW Technical Consulting (FM) Ltd
               </p>
 
-              <p className="text-white/60 text-sm leading-relaxed mb-6">
+              <p className="text-white/60 text-base leading-relaxed mb-6">
                 Led by Richard Warren, with an emphasis on technical assurance that holds up under
                 inspection. Decades of estates leadership across healthcare, public sector, and
                 complex infrastructure underpin a pragmatic, data-led approach — prioritising safe
@@ -47,14 +47,14 @@ export function About() {
 
               {/* Focus areas */}
               <div>
-                <p className="text-white/30 text-[0.6rem] tracking-[0.15em] uppercase mb-3">
+                <p className="text-white/30 text-[0.75rem] tracking-[0.15em] uppercase mb-3">
                   Focus Areas
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {FOCUS_AREAS.map((area) => (
                     <span
                       key={area}
-                      className="bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.20)] text-[#00c2a8] text-[0.65rem] font-mono px-3 py-1 rounded-sm hover:bg-[rgba(0,194,168,0.18)] hover:-translate-y-px transition-all duration-150 cursor-default"
+                      className="bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.20)] text-[#00c2a8] text-[0.8rem] font-mono px-3 py-1 rounded-sm hover:bg-[rgba(0,194,168,0.18)] hover:-translate-y-px transition-all duration-150 cursor-default"
                     >
                       {area}
                     </span>
