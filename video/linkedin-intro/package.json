@@ -1,0 +1,17 @@
+{
+  "name": "rpw-linkedin-intro",
+  "private": true,
+  "description": "25s LinkedIn intro video for RPW Technical Consulting, rendered with HyperFrames",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node build.mjs && hyperframes check",
+    "preview": "node build.mjs && hyperframes preview",
+    "render": "npm run render:landscape && npm run render:square && npm run render:vertical",
+    "render:landscape": "node build.mjs landscape && hyperframes render -o renders/rpw-intro-landscape.mp4 -q delivery",
+    "render:square": "node build.mjs square && hyperframes render -o renders/rpw-intro-square.mp4 -q delivery",
+    "render:vertical": "node build.mjs vertical && hyperframes render -o renders/rpw-intro-vertical.mp4 -q delivery"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.138"
+  }
+}
