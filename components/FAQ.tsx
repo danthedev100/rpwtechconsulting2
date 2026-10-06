@@ -1,12 +1,14 @@
 // components/FAQ.tsx
 import { Plus } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
+import { SectionRule } from '@/components/SectionRule'
 import { SectionHeader } from '@/components/SectionHeader'
 import { FAQS } from '@/lib/faq'
 
 export function FAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="bg-[#0a1628] py-24 sm:py-28 px-6 border-t border-white/[0.04]">
+    <section id="faq" aria-labelledby="faq-title" className="relative bg-[#0a1628] py-24 sm:py-28 px-6 border-t border-white/[0.04]">
+      <SectionRule />
       <div className="max-w-[820px] mx-auto">
         <SectionHeader id="faq-title" eyebrow="FAQ" title="Questions, answered." />
 

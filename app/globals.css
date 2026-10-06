@@ -56,6 +56,15 @@
   }
 }
 
+/* Until GSAP has applied initial states, hide animated elements so they don't flash.
+   An inline script in the layout adds .js immediately and .motion-ready as a fallback. */
+@media (prefers-reduced-motion: no-preference) {
+  .js:not(.motion-ready) [data-anim],
+  .js:not(.motion-ready) [data-hero] {
+    opacity: 0;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

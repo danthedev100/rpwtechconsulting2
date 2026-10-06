@@ -11,6 +11,8 @@ import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import { BackToTop } from '@/components/BackToTop'
 import { JsonLd } from '@/components/JsonLd'
+import { AmbientRings } from '@/components/AmbientRings'
+import { ScrollEffects } from '@/components/ScrollEffects'
 import { FAQS } from '@/lib/faq'
 
 const faqJsonLd = {
@@ -41,6 +43,9 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
+      <AmbientRings />
+      {/* Must stay last: sets up scroll animations once all targets exist */}
+      <ScrollEffects />
     </>
   )
 }

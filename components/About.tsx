@@ -2,6 +2,9 @@
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
+import { SectionRule } from '@/components/SectionRule'
+import { Eyebrow } from '@/components/Eyebrow'
+import { LogoRings } from '@/components/LogoRings'
 
 const FOCUS_AREAS = [
   'Authorising Engineer',
@@ -13,7 +16,8 @@ const FOCUS_AREAS = [
 
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="bg-[#0d1e30] py-24 sm:py-28 px-6 border-t border-[rgba(0,194,168,0.08)]">
+    <section id="about" aria-labelledby="about-title" className="relative bg-[#0d1e30] py-24 sm:py-28 px-6 border-t border-[rgba(0,194,168,0.08)]">
+      <SectionRule />
       <div className="max-w-[1120px] mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-20 items-center">
         {/* Portrait */}
         <FadeUp>
@@ -23,7 +27,13 @@ export function About() {
               className="absolute -inset-4 rounded-lg bg-[radial-gradient(closest-side,rgba(0,194,168,0.25),transparent)] blur-2xl"
             />
             <div aria-hidden="true" className="absolute -bottom-3 -right-3 w-full h-full rounded-md border border-[rgba(0,194,168,0.35)]" />
-            <div className="relative aspect-[4/5] rounded-md overflow-hidden ring-1 ring-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+            <LogoRings
+              data-anim="rings"
+              hairline
+              strokeWidth={1.5}
+              className="absolute -top-16 -left-14 w-32 h-auto opacity-80"
+            />
+            <div data-anim="reveal" className="relative aspect-[4/5] rounded-md overflow-hidden ring-1 ring-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
               <Image
                 src="/media/richard-portrait.jpg"
                 alt="Richard Warren, Principal Consultant at RPW Technical Consulting"
@@ -40,12 +50,9 @@ export function About() {
         </FadeUp>
 
         {/* Content */}
-        <FadeUp delay={100}>
-          <p className="text-[#00c2a8] text-[0.75rem] tracking-[0.3em] uppercase font-bold mb-3 inline-flex items-center gap-3">
-            <span className="w-5 h-px bg-[#00c2a8]" aria-hidden="true" />
-            About
-          </p>
-          <h2 id="about-title" className="text-white text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-tight mb-2">
+        <FadeUp>
+          <Eyebrow>About</Eyebrow>
+          <h2 id="about-title" data-anim="split" className="text-white text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-tight mb-2">
             Richard Warren
           </h2>
           <p className="text-white/40 text-sm mb-7">
