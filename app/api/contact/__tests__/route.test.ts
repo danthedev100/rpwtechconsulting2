@@ -74,4 +74,46 @@ describe('POST /api/contact', () => {
     const res = await POST(req)
     expect(res.status).toBe(400)
   })
+  const post = (body: unknown, ip = '10.0.0.1') =>
+    POST(
+      new Request('http://localhost/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-forwarded-for': ip },
+        body: JSON.stringify(body),
+      })
+    )
+
+  const valid = {
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    enquiry: 'Compliance management',
+    message: 'Hello',
+  }
+
+  it('returns 400 for an invalid email address', async () => {
+    const res = await post({ ...valid, email: 'not-an-email' }, '10.0.0.2')
+    expect(res.status).toBe(400)
+    const json = await res.json()
+    expect(json.error).toMatch(/valid email/i)
+  })
+
+  it('returns 400 when the message is too long', async () => {
+    const res = await post({ ...valid, message: 'x'.repeat(5001) }, '10.0.0.3')
+    expect(res.status).toBe(400)
+  })
+
+  it('silently accepts honeypot submissions without sending', async () => {
+    const { Resend } = jest.requireMock('resend') as { Resend: jest.Mock }
+    Resend.mockClear()
+    const res = await post({ ...valid, website: 'http://spam.example' }, '10.0.0.4')
+    expect(res.status).toBe(200)
+    expect(Resend).not.toHaveBeenCalled()
+  })
+
+  it('rate limits repeated submissions from the same IP', async () => {
+    const statuses: number[] = []
+    for (let i = 0; i < 6; i++) statuses.push((await post(valid, '10.0.0.5')).status)
+    expect(statuses.slice(0, 5)).toEqual([200, 200, 200, 200, 200])
+    expect(statuses[5]).toBe(429)
+  })
 })
