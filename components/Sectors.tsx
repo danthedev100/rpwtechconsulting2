@@ -1,6 +1,7 @@
 // components/Sectors.tsx
 import { Building2, HardHat, Hospital, Landmark } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
+import { SectionRule } from '@/components/SectionRule'
 import { SectionHeader } from '@/components/SectionHeader'
 
 const SECTORS = [
@@ -28,7 +29,8 @@ const SECTORS = [
 
 export function Sectors() {
   return (
-    <section id="sectors" aria-labelledby="sectors-title" className="bg-[#0d1e30] py-24 sm:py-28 px-6">
+    <section id="sectors" aria-labelledby="sectors-title" className="relative bg-[#0d1e30] py-24 sm:py-28 px-6">
+      <SectionRule />
       <div className="max-w-[1120px] mx-auto">
         <SectionHeader
           id="sectors-title"
@@ -38,10 +40,10 @@ export function Sectors() {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] border border-white/[0.06] rounded-md overflow-hidden">
-          {SECTORS.map((sector, i) => {
+          {SECTORS.map((sector) => {
             const Icon = sector.icon
             return (
-              <FadeUp key={sector.name} delay={i * 80} className="h-full">
+              <FadeUp key={sector.name} className="h-full">
                 <div className="group h-full bg-[#0d1e30] p-7 hover:bg-[#0f2236] transition-colors duration-200">
                   <Icon
                     className="w-7 h-7 text-[#00c2a8] mb-6 group-hover:scale-110 transition-transform duration-200"

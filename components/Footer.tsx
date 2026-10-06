@@ -1,6 +1,7 @@
 // components/Footer.tsx
-import Image from 'next/image'
+import { BrandLogo } from '@/components/BrandLogo'
 import Link from 'next/link'
+import { SectionRule } from '@/components/SectionRule'
 import { NAV_LINKS, SITE } from '@/lib/site'
 
 const SERVICE_LINKS = ['Technical Solutions', 'Asset Management', 'Compliance Management']
@@ -9,16 +10,11 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-[#060810] border-t border-[rgba(255,255,255,0.05)]">
+    <footer className="relative bg-[#060810] border-t border-[rgba(255,255,255,0.05)]">
+      <SectionRule />
       <div className="max-w-[1120px] mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-[minmax(0,2fr)_1fr_1fr_1.4fr] gap-10">
         <div className="col-span-2 md:col-span-1">
-          <Image
-            src="/media/logo-transparent.png"
-            alt="RPW Technical Consulting (FM) Ltd"
-            width={440}
-            height={161}
-            className="h-16 w-auto mb-5"
-          />
+          <BrandLogo animated={false} className="h-12 w-auto mb-6" />
           <p className="text-white/45 text-sm leading-relaxed max-w-xs">{SITE.tagline}</p>
         </div>
 

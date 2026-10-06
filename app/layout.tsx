@@ -84,11 +84,16 @@ const organisationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en-GB" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('motion-ready')},4000)",
+          }}
+        />
+      </head>
       <body>
-        <noscript>
-          <style>{'.fade-up{opacity:1!important;transform:none!important}'}</style>
-        </noscript>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[#00c2a8] focus:text-[#0a0e1c] focus:px-4 focus:py-2 focus:rounded-sm focus:font-bold"

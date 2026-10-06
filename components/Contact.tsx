@@ -1,6 +1,9 @@
 // components/Contact.tsx
 import { Clock, Mail, MapPin } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
+import { SectionRule } from '@/components/SectionRule'
+import { Eyebrow } from '@/components/Eyebrow'
+import { ConvergeRings } from '@/components/ConvergeRings'
 import { ContactForm } from '@/components/ContactForm'
 import { SITE } from '@/lib/site'
 
@@ -26,16 +29,16 @@ export function Contact() {
         aria-hidden="true"
         className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-[radial-gradient(closest-side,rgba(0,194,168,0.10),transparent)]"
       />
+      <SectionRule />
+      <ConvergeRings className="hidden lg:block absolute left-[max(2rem,calc(50%-560px))] bottom-10 w-[300px] opacity-35 mix-blend-screen" />
       <div className="relative max-w-[1120px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-16 items-start">
           {/* Left: copy */}
           <FadeUp>
-            <p className="text-[#00c2a8] text-[0.75rem] tracking-[0.3em] uppercase font-bold mb-3 inline-flex items-center gap-3">
-              <span className="w-5 h-px bg-[#00c2a8]" aria-hidden="true" />
-              Get in Touch
-            </p>
+            <Eyebrow>Get in Touch</Eyebrow>
             <h2
               id="contact-title"
+              data-anim="split"
               className="text-white text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold mb-5 leading-[1.15] tracking-tight"
             >
               Ready to discuss
@@ -74,7 +77,7 @@ export function Contact() {
           </FadeUp>
 
           {/* Right: form */}
-          <FadeUp delay={100}>
+          <FadeUp>
             <ContactForm />
           </FadeUp>
         </div>

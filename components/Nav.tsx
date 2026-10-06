@@ -2,7 +2,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import { BrandLogo } from '@/components/BrandLogo'
 import { useScrolled } from '@/hooks/useScrolled'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { NAV_LINKS } from '@/lib/site'
@@ -49,18 +49,15 @@ export function Nav() {
       <nav
         aria-label="Primary"
         className={`max-w-[1120px] mx-auto px-6 flex items-center justify-between transition-[height] duration-300 ${
-          scrolled ? 'h-16' : 'h-20'
+          scrolled ? 'h-16 md:h-[4.5rem]' : 'h-20 md:h-24'
         }`}
       >
         {/* Logo */}
-        <a href="#top" aria-label="RPW Technical Consulting — back to top">
-          <Image
-            src="/media/logo-transparent.png"
-            alt="RPW Technical Consulting (FM) Ltd"
-            width={440}
-            height={161}
-            className={`w-auto transition-[height] duration-300 ${scrolled ? 'h-14' : 'h-20'}`}
-            priority
+        <a href="#top" aria-label="RPW Technical Consulting — back to top" className="block">
+          <BrandLogo
+            className={`w-auto drop-shadow-[0_2px_14px_rgba(0,0,0,0.65)] transition-[height] duration-300 ${
+              scrolled ? 'h-10 md:h-11' : 'h-12 md:h-16'
+            }`}
           />
         </a>
 

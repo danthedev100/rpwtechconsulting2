@@ -1,6 +1,7 @@
 // components/Services.tsx
 import { ArrowRight, ClipboardCheck, Database, Wrench } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
+import { SectionRule } from '@/components/SectionRule'
 import { SectionHeader } from '@/components/SectionHeader'
 import { EnquiryLink } from '@/components/EnquiryLink'
 import type { EnquiryType } from '@/lib/site'
@@ -70,6 +71,7 @@ const WORKING_MODEL = [
 export function Services() {
   return (
     <section id="services" aria-labelledby="services-title" className="relative bg-[#0d1e30] py-24 sm:py-28 px-6 overflow-hidden">
+      <SectionRule />
       <div
         aria-hidden="true"
         className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(0,194,168,0.10),transparent)]"
@@ -87,9 +89,9 @@ export function Services() {
           {PILLARS.map((pillar, i) => {
             const Icon = pillar.icon
             return (
-              <FadeUp key={pillar.name} delay={i * 80} className="h-full">
+              <FadeUp key={pillar.name} className="h-full">
                 <article className="relative bg-[#0f1c2e] border border-[rgba(0,194,168,0.12)] rounded-md p-7 h-full flex flex-col shadow-[0_4px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.4),0_-2px_12px_rgba(0,194,168,0.2)] hover:-translate-y-1.5 hover:border-[rgba(0,194,168,0.3)] transition-all duration-[250ms] group overflow-hidden">
-                  <span aria-hidden="true" className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[#00c2a8] via-[#00c2a8] to-transparent" />
+                  <span aria-hidden="true" data-anim="line" className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[#00c2a8] via-[#00c2a8] to-transparent" />
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-11 h-11 rounded-md bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.2)] flex items-center justify-center text-[#00c2a8] group-hover:bg-[rgba(0,194,168,0.16)] transition-colors">
                       <Icon className="w-5 h-5" aria-hidden="true" />
@@ -120,7 +122,7 @@ export function Services() {
         </div>
 
         {/* Working model strip */}
-        <FadeUp delay={240}>
+        <FadeUp>
           <div className="bg-[#0a1628] border border-[rgba(0,194,168,0.10)] rounded-md px-6 py-5 flex flex-wrap items-center gap-4">
             <span className="text-[#00c2a8] text-[0.75rem] font-bold tracking-[0.2em] uppercase flex-shrink-0">
               Working Model
