@@ -19,12 +19,12 @@ export function SectionHeader({ eyebrow, title, intro, align = 'center', id }: S
       <h2
         id={id}
         data-anim="split"
-        className="text-white text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-tight"
+        className="text-ink text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-tight"
       >
         {title}
       </h2>
       {intro && (
-        <p data-anim="fade" className="text-white/55 text-base sm:text-lg leading-relaxed mt-4">
+        <p data-anim="fade" className="text-ink/68 text-base sm:text-lg leading-relaxed mt-4">
           {intro}
         </p>
       )}

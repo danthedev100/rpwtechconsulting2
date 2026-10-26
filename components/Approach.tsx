@@ -23,7 +23,7 @@ const STEPS = [
 
 export function Approach() {
   return (
-    <section id="approach" aria-labelledby="approach-title" className="relative bg-[#0a1628] py-24 sm:py-28 px-6 border-t border-white/[0.04]">
+    <section id="approach" aria-labelledby="approach-title" className="relative bg-[#ffffff] py-24 sm:py-28 px-6 border-t border-ink/[0.04]">
       <SectionRule />
       <div className="max-w-[1120px] mx-auto">
         <SectionHeader
@@ -35,29 +35,29 @@ export function Approach() {
 
         <ol className="relative grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
           {/* Connector: faint track, with a bright line that fills as you scroll */}
-          <span aria-hidden="true" className="hidden md:block absolute top-5 left-[12.5%] right-[12.5%] h-px bg-white/[0.08]" />
+          <span aria-hidden="true" className="hidden md:block absolute top-5 left-[12.5%] right-[12.5%] h-px bg-ink/[0.08]" />
           <span
             aria-hidden="true"
             data-anim="scrub-x"
-            className="hidden md:block absolute top-5 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-[#00c2a8] via-[rgba(0,194,168,0.6)] to-[#00c2a8] shadow-[0_0_12px_rgba(0,194,168,0.6)]"
+            className="hidden md:block absolute top-5 left-[12.5%] right-[12.5%] h-0.5 bg-brand"
           />
-          <span aria-hidden="true" className="md:hidden absolute left-5 top-5 bottom-5 w-px bg-white/[0.08]" />
+          <span aria-hidden="true" className="md:hidden absolute left-5 top-5 bottom-5 w-px bg-ink/[0.08]" />
           <span
             aria-hidden="true"
             data-anim="scrub-y"
-            className="md:hidden absolute left-5 top-5 bottom-5 w-px bg-[#00c2a8] shadow-[0_0_12px_rgba(0,194,168,0.6)]"
+            className="md:hidden absolute left-5 top-5 bottom-5 w-0.5 bg-[#6d3bef]"
           />
           {STEPS.map((step, i) => (
             <li key={step.title} className="relative flex md:flex-col md:items-center md:text-center gap-5 md:gap-0">
               <span
                 data-anim="pop"
-                className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-[#0a1628] border border-[#00c2a8] text-[#00c2a8] font-mono text-sm flex items-center justify-center shadow-[0_0_24px_rgba(0,194,168,0.25)] md:mb-6"
+                className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-brand text-white font-bold text-sm flex items-center justify-center shadow-[0_8px_20px_rgba(109,59,239,0.3)] md:mb-6"
               >
                 {i + 1}
               </span>
               <div data-anim="fade">
-                <h3 className="text-white text-lg font-bold mb-2">{step.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed md:max-w-[15rem] md:mx-auto">{step.body}</p>
+                <h3 className="text-ink text-lg font-bold mb-2">{step.title}</h3>
+                <p className="text-ink/68 text-sm leading-relaxed md:max-w-[15rem] md:mx-auto">{step.body}</p>
               </div>
             </li>
           ))}

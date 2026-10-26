@@ -38,18 +38,18 @@ const SECTIONS = [
 
 export default function PrivacyPage() {
   return (
-    <main id="main" className="min-h-[100svh] bg-[#060810] px-6 py-24">
+    <main id="main" className="min-h-[100svh] bg-[#f1eefc] px-6 py-24">
       <article className="max-w-[720px] mx-auto">
-        <Link href="/" className="text-[#00c2a8] text-sm hover:underline">
+        <Link href="/" className="text-[#6d3bef] text-sm hover:underline">
           ← Back to home
         </Link>
-        <h1 className="text-white text-4xl font-extrabold mt-8 mb-3">Privacy notice</h1>
-        <p className="text-white/40 text-sm mb-12">{SITE.legalName}</p>
+        <h1 className="text-ink text-4xl font-extrabold mt-8 mb-3">Privacy notice</h1>
+        <p className="text-ink/58 text-sm mb-12">{SITE.legalName}</p>
         <div className="space-y-10">
           {SECTIONS.map((s) => (
             <section key={s.heading}>
-              <h2 className="text-white text-xl font-bold mb-3">{s.heading}</h2>
-              <p className="text-white/65 leading-relaxed">{s.body}</p>
+              <h2 className="text-ink text-xl font-bold mb-3">{s.heading}</h2>
+              <p className="text-ink/75 leading-relaxed">{s.body}</p>
             </section>
           ))}
         </div>

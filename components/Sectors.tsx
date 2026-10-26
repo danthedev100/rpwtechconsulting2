@@ -29,7 +29,7 @@ const SECTORS = [
 
 export function Sectors() {
   return (
-    <section id="sectors" aria-labelledby="sectors-title" className="relative bg-[#0d1e30] py-24 sm:py-28 px-6">
+    <section id="sectors" aria-labelledby="sectors-title" className="relative bg-[#f6f4ff] py-24 sm:py-28 px-6">
       <SectionRule />
       <div className="max-w-[1120px] mx-auto">
         <SectionHeader
@@ -39,19 +39,19 @@ export function Sectors() {
           intro="Facilities managers, property owners and contractors who need answers they can stand behind."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] border border-white/[0.06] rounded-md overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {SECTORS.map((sector) => {
             const Icon = sector.icon
             return (
               <FadeUp key={sector.name} className="h-full">
-                <div className="group h-full bg-[#0d1e30] p-7 hover:bg-[#0f2236] transition-colors duration-200">
+                <div className="group h-full bg-white rounded-3xl p-7 shadow-[0_8px_30px_rgba(15,18,34,0.05)] hover:shadow-[0_16px_40px_rgba(109,59,239,0.12)] hover:-translate-y-1 transition-all duration-300">
                   <Icon
-                    className="w-7 h-7 text-[#00c2a8] mb-6 group-hover:scale-110 transition-transform duration-200"
+                    className="w-12 h-12 p-3 rounded-2xl bg-violet-soft text-[#6d3bef] mb-6 group-hover:scale-110 transition-transform duration-200"
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
-                  <h3 className="text-white text-base font-bold mb-2">{sector.name}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed">{sector.body}</p>
+                  <h3 className="text-ink text-base font-bold mb-2">{sector.name}</h3>
+                  <p className="text-ink/68 text-sm leading-relaxed">{sector.body}</p>
                 </div>
               </FadeUp>
             )

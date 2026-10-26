@@ -84,13 +84,13 @@ export function Hero() {
         </video>
       </div>
 
-      {/* Gradient overlays — preserve purple hue at top, ensure legibility at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,8,16,0.97)] via-[rgba(8,4,20,0.55)] to-[rgba(8,4,20,0.25)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[rgba(6,8,16,0.65)] to-transparent" />
+      {/* White side-wash — copy sits on white, the sky shows through on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/10" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white to-transparent" />
       {/* Technical grid texture */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_top,black,transparent_70%)]"
+        className="absolute inset-0 opacity-[0.07] [background-image:linear-gradient(rgba(15,18,34,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(15,18,34,0.5)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_top,black,transparent_70%)]"
       />
 
       <HeroRings />
@@ -98,30 +98,30 @@ export function Hero() {
       {/* Content */}
       <div data-hero="content" className="relative z-10 w-full max-w-[1120px] mx-auto px-6 pb-14 sm:pb-20 pt-40">
         {/* Location tag */}
-        <div data-hero="tag" className="flex items-center gap-3 mb-6">
+        <div data-hero="tag" className="inline-flex items-center gap-2.5 bg-violet-soft rounded-full px-4 py-1.5 mb-7">
           <span className="relative flex h-2 w-2" aria-hidden="true">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-[#00c2a8] opacity-60 motion-safe:animate-ping" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00c2a8]" />
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[#6d3bef] opacity-60 motion-safe:animate-ping" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[#6d3bef]" />
           </span>
-          <span className="text-[#00c2a8] text-[0.7rem] sm:text-[0.75rem] tracking-[0.2em] sm:tracking-[0.3em] uppercase">
-            North-East England · Remote &amp; On-Site
+          <span className="text-[#6d3bef] text-[0.8rem] font-semibold">
+            North-East England · Remote &amp; on-site
           </span>
         </div>
 
         {/* Headline */}
         <h1
           data-hero="headline"
-          className="text-[clamp(2.5rem,6.5vw,4.75rem)] font-extrabold leading-[1.04] tracking-tight mb-6 max-w-4xl"
+          className="text-[clamp(2.5rem,6.5vw,4.75rem)] font-extrabold leading-[1.04] tracking-[-0.03em] mb-6 max-w-4xl"
         >
-          <span className="block text-white">Technical assurance</span>
-          <span className="block text-white">that holds up under</span>
-          <span data-hero="accent" className="block text-[#00c2a8]">
+          <span className="block text-ink">Technical assurance</span>
+          <span className="block text-ink">that holds up under</span>
+          <span data-hero="accent" className="block text-[#6d3bef]">
             inspection.
           </span>
         </h1>
 
         {/* Subline */}
-        <p data-hero="sub" className="text-white/70 text-lg leading-relaxed max-w-xl mb-9">
+        <p data-hero="sub" className="text-ink/78 text-lg leading-relaxed max-w-xl mb-9">
           Independent FM consultancy led by Richard Warren. Decades of estates leadership
           across healthcare, public sector, and complex infrastructure — delivering
           pragmatic, data-led solutions.
@@ -131,14 +131,14 @@ export function Hero() {
         <div data-hero="cta" className="flex flex-wrap gap-3 mb-12">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 bg-[#00c2a8] text-[#0a0e1c] px-6 py-3.5 text-sm font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_8px_24px_rgba(0,194,168,0.3)] transition-[transform,box-shadow] duration-200"
+            className="group inline-flex items-center gap-2 bg-brand text-white px-6 py-3.5 text-sm font-semibold rounded-full hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(109,59,239,0.3)] transition-[transform,box-shadow] duration-200"
           >
             Start a Conversation
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </a>
           <a
             href="#services"
-            className="border border-white/25 text-white/85 px-6 py-3.5 text-sm rounded-sm backdrop-blur-sm bg-white/[0.03] hover:border-white/50 hover:text-white transition-colors duration-200"
+            className="bg-white border border-[rgba(15,18,34,0.08)] text-ink px-6 py-3.5 text-sm font-semibold rounded-full shadow-[0_4px_14px_rgba(15,18,34,0.06)] hover:border-[#6d3bef]/40 hover:text-ink transition-colors duration-200"
           >
             Explore Services
           </a>
@@ -146,16 +146,16 @@ export function Hero() {
 
         {/* Stats bar */}
         <div data-hero="stats" className="relative pt-7">
-          <span data-hero="stats-rule" aria-hidden="true" className="absolute top-0 inset-x-0 h-px bg-white/[0.12]" />
-          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-y-6">
-            {STATS.map((stat, i) => (
+          <span data-hero="stats-rule" aria-hidden="true" className="hidden" />
+          <dl className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-4xl">
+            {STATS.map((stat) => (
               <div
                 key={stat.label}
                 data-hero="stat"
-                className={`flex flex-col-reverse ${i > 0 ? 'sm:border-l sm:border-white/[0.08] sm:pl-6' : ''}`}
+                className="flex flex-col-reverse bg-white/85 backdrop-blur-md border border-white rounded-2xl px-5 py-4 shadow-[0_8px_30px_rgba(15,18,34,0.08)]"
               >
-                <dt className="text-white/40 text-[0.7rem] tracking-[0.2em] uppercase">{stat.label}</dt>
-                <dd className="text-[#00c2a8] text-2xl sm:text-3xl font-extrabold leading-none mb-1.5">
+                <dt className="text-ink/58 text-[0.8rem] font-medium">{stat.label}</dt>
+                <dd className="text-brand text-2xl sm:text-[1.75rem] font-extrabold tracking-tight leading-none mb-1.5">
                   {stat.value !== null ? <CountUp end={stat.value} suffix={stat.suffix} /> : stat.display}
                 </dd>
               </div>
