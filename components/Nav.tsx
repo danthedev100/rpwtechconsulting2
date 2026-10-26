@@ -42,7 +42,7 @@ export function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         solid
-          ? 'bg-[#0a0e1c]/90 backdrop-blur-md shadow-[0_1px_0_rgba(0,194,168,0.1),0_4px_20px_rgba(0,0,0,0.3)]'
+          ? 'bg-[#fbfaf7]/90 backdrop-blur-md shadow-[0_1px_0_rgba(11,127,113,0.1),0_4px_20px_rgba(20,24,43,0.075)]'
           : 'bg-transparent'
       }`}
     >
@@ -55,7 +55,7 @@ export function Nav() {
         {/* Logo */}
         <a href="#top" aria-label="RPW Technical Consulting — back to top" className="block">
           <BrandLogo
-            className={`w-auto drop-shadow-[0_2px_14px_rgba(0,0,0,0.65)] transition-[height] duration-300 ${
+            className={`w-auto transition-[height] duration-300 ${
               scrolled ? 'h-10 md:h-11' : 'h-12 md:h-16'
             }`}
           />
@@ -70,13 +70,13 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? 'true' : undefined}
-                className={`text-[0.8rem] tracking-[0.15em] hover:text-white transition-colors duration-200 relative group uppercase ${
-                  isActive ? 'text-white' : 'text-white/45'
+                className={`text-[0.8rem] tracking-[0.15em] hover:text-ink transition-colors duration-200 relative group uppercase ${
+                  isActive ? 'text-ink' : 'text-ink/62'
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-px bg-[#00c2a8] transition-all duration-200 group-hover:w-full ${
+                  className={`absolute -bottom-1 left-0 h-px bg-[#0b7f71] transition-all duration-200 group-hover:w-full ${
                     isActive ? 'w-full' : 'w-0'
                   }`}
                 />
@@ -85,7 +85,7 @@ export function Nav() {
           })}
           <a
             href="#contact"
-            className="bg-[#00c2a8] text-[#0a0e1c] px-4 py-2 text-[0.8rem] font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_4px_16px_rgba(0,194,168,0.35)] transition-all duration-200"
+            className="bg-[#0b7f71] text-white px-4 py-2 text-[0.8rem] font-bold tracking-[0.15em] uppercase rounded-sm hover:scale-[1.02] hover:shadow-[0_4px_16px_rgba(11,127,113,0.35)] transition-all duration-200"
           >
             Get in Touch
           </a>
@@ -93,7 +93,7 @@ export function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 -mr-2 text-white/70 hover:text-white transition-colors"
+          className="md:hidden flex flex-col gap-1.5 p-2 -mr-2 text-ink/78 hover:text-ink transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
@@ -123,14 +123,14 @@ export function Nav() {
         inert={!menuOpen}
         className={`md:hidden overflow-hidden transition-all duration-300 ${
           menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        } border-t border-white/5`}
+        } border-t border-ink/5`}
       >
         <div className="px-6 py-6 flex flex-col gap-5">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-base text-white/60 hover:text-white transition-colors"
+              className="text-base text-ink/72 hover:text-ink transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -138,7 +138,7 @@ export function Nav() {
           ))}
           <a
             href="#contact"
-            className="bg-[#00c2a8] text-[#0a0e1c] px-4 py-3 text-sm font-bold tracking-widest uppercase rounded-sm text-center hover:brightness-110 transition-all"
+            className="bg-[#0b7f71] text-white px-4 py-3 text-sm font-bold tracking-widest uppercase rounded-sm text-center hover:brightness-110 transition-all"
             onClick={() => setMenuOpen(false)}
           >
             Get in Touch
@@ -149,7 +149,7 @@ export function Nav() {
       {/* Scroll progress */}
       <div
         aria-hidden="true"
-        className="absolute bottom-0 left-0 h-px bg-[#00c2a8] origin-left"
+        className="absolute bottom-0 left-0 h-px bg-[#0b7f71] origin-left"
         style={{ width: '100%', transform: `scaleX(${progress})`, opacity: scrolled ? 1 : 0 }}
       />
     </header>

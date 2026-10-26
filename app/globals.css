@@ -2,19 +2,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-base: #060810;
-  --color-bg-surface: #0a1628;
-  --color-bg-elevated: #0d1e30;
-  --color-bg-card: #0f1c2e;
-  --color-accent: #00c2a8;
-  --color-accent-dim: rgba(0, 194, 168, 0.10);
-  --color-accent-border: rgba(0, 194, 168, 0.18);
-  --color-text-primary: #ffffff;
-  --color-text-secondary: rgba(255, 255, 255, 0.60);
-  --color-text-muted: rgba(255, 255, 255, 0.35);
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-bg-base: #fbfaf7;
+  --color-bg-surface: #f3f1ec;
+  --color-bg-elevated: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-ink: #14182b;
+  --color-accent: #0b7f71;
+  --color-accent-dim: rgba(11, 127, 113, 0.08);
+  --color-accent-border: rgba(11, 127, 113, 0.18);
+  --color-text-primary: #14182b;
+  --color-text-secondary: rgba(20, 24, 43, 0.72);
+  --color-text-muted: rgba(20, 24, 43, 0.55);
+  --color-border-subtle: rgba(20, 24, 43, 0.08);
 
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 }
 
@@ -24,8 +25,8 @@
   }
 
   ::selection {
-    background: rgba(0, 194, 168, 0.35);
-    color: #ffffff;
+    background: rgba(11, 127, 113, 0.22);
+    color: #14182b;
   }
 
   :focus-visible {
@@ -81,7 +82,7 @@
 }
 
 @keyframes glowPulse {
-  0%, 100% { text-shadow: 0 0 20px rgba(0, 194, 168, 0.5); }
+  0%, 100% { text-shadow: 0 0 20px rgba(11, 127, 113, 0.35); }
   50% { text-shadow: none; }
 }
 

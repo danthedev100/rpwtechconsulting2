@@ -7,23 +7,23 @@ import { FAQS } from '@/lib/faq'
 
 export function FAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="relative bg-[#0a1628] py-24 sm:py-28 px-6 border-t border-white/[0.04]">
+    <section id="faq" aria-labelledby="faq-title" className="relative bg-[#fbfaf7] py-24 sm:py-28 px-6 border-t border-ink/[0.04]">
       <SectionRule />
       <div className="max-w-[820px] mx-auto">
         <SectionHeader id="faq-title" eyebrow="FAQ" title="Questions, answered." />
 
         <FadeUp>
-          <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
+          <div className="divide-y divide-ink/[0.08] border-y border-ink/[0.08]">
             {FAQS.map((item) => (
               <details key={item.q} className="group py-1">
-                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none py-5 text-white text-base sm:text-lg font-semibold hover:text-[#00c2a8] transition-colors [&::-webkit-details-marker]:hidden">
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none py-5 text-ink text-base sm:text-lg font-semibold hover:text-[#0b7f71] transition-colors [&::-webkit-details-marker]:hidden">
                   {item.q}
                   <Plus
-                    className="w-5 h-5 flex-shrink-0 text-[#00c2a8] transition-transform duration-200 group-open:rotate-45"
+                    className="w-5 h-5 flex-shrink-0 text-[#0b7f71] transition-transform duration-200 group-open:rotate-45"
                     aria-hidden="true"
                   />
                 </summary>
-                <p className="text-white/60 text-base leading-relaxed pb-6 pr-10">{item.a}</p>
+                <p className="text-ink/72 text-base leading-relaxed pb-6 pr-10">{item.a}</p>
               </details>
             ))}
           </div>

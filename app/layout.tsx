@@ -1,10 +1,12 @@
 // app/layout.tsx
 import type { Metadata, Viewport } from 'next'
-import { GeistSans } from 'geist/font/sans'
+import { Manrope } from 'next/font/google'
 import { GeistMono } from 'geist/font/mono'
 import { JsonLd } from '@/components/JsonLd'
 import { SITE } from '@/lib/site'
 import './globals.css'
+
+const sans = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -49,8 +51,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#060810',
-  colorScheme: 'dark',
+  themeColor: '#fbfaf7',
+  colorScheme: 'light',
 }
 
 const organisationJsonLd = {
@@ -84,7 +86,7 @@ const organisationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+    <html lang="en-GB" className={`${sans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -96,7 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[#00c2a8] focus:text-[#0a0e1c] focus:px-4 focus:py-2 focus:rounded-sm focus:font-bold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[#0b7f71] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-bold"
         >
           Skip to content
         </a>

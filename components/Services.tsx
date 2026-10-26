@@ -70,11 +70,11 @@ const WORKING_MODEL = [
 
 export function Services() {
   return (
-    <section id="services" aria-labelledby="services-title" className="relative bg-[#0d1e30] py-24 sm:py-28 px-6 overflow-hidden">
+    <section id="services" aria-labelledby="services-title" className="relative bg-[#f3f1ec] py-24 sm:py-28 px-6 overflow-hidden">
       <SectionRule />
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(0,194,168,0.10),transparent)]"
+        className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full bg-[radial-gradient(closest-side,rgba(11,127,113,0.10),transparent)]"
       />
       <div className="relative max-w-[1120px] mx-auto">
         <SectionHeader
@@ -90,27 +90,27 @@ export function Services() {
             const Icon = pillar.icon
             return (
               <FadeUp key={pillar.name} className="h-full">
-                <article className="relative bg-[#0f1c2e] border border-[rgba(0,194,168,0.12)] rounded-md p-7 h-full flex flex-col shadow-[0_4px_24px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.4),0_-2px_12px_rgba(0,194,168,0.2)] hover:-translate-y-1.5 hover:border-[rgba(0,194,168,0.3)] transition-all duration-[250ms] group overflow-hidden">
-                  <span aria-hidden="true" data-anim="line" className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[#00c2a8] via-[#00c2a8] to-transparent" />
+                <article className="relative bg-[#ffffff] border border-[rgba(11,127,113,0.12)] rounded-md p-7 h-full flex flex-col shadow-[0_4px_24px_rgba(20,24,43,0.075)] hover:shadow-[0_16px_40px_rgba(20,24,43,0.1),0_-2px_12px_rgba(11,127,113,0.2)] hover:-translate-y-1.5 hover:border-[rgba(11,127,113,0.3)] transition-all duration-[250ms] group overflow-hidden">
+                  <span aria-hidden="true" data-anim="line" className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-[#0b7f71] via-[#0b7f71] to-transparent" />
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-11 h-11 rounded-md bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.2)] flex items-center justify-center text-[#00c2a8] group-hover:bg-[rgba(0,194,168,0.16)] transition-colors">
+                    <div className="w-11 h-11 rounded-md bg-[rgba(11,127,113,0.08)] border border-[rgba(11,127,113,0.2)] flex items-center justify-center text-[#0b7f71] group-hover:bg-[rgba(11,127,113,0.16)] transition-colors">
                       <Icon className="w-5 h-5" aria-hidden="true" />
                     </div>
-                    <span className="font-mono text-xs text-white/25">0{i + 1}</span>
+                    <span className="font-mono text-xs text-ink/45">0{i + 1}</span>
                   </div>
-                  <h3 className="text-white text-xl font-bold mb-2">{pillar.name}</h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-5">{pillar.summary}</p>
-                  <ul className="space-y-2 mb-7 pt-5 border-t border-white/[0.06]">
+                  <h3 className="text-ink text-xl font-bold mb-2">{pillar.name}</h3>
+                  <p className="text-ink/68 text-sm leading-relaxed mb-5">{pillar.summary}</p>
+                  <ul className="space-y-2 mb-7 pt-5 border-t border-ink/[0.06]">
                     {pillar.services.map((service) => (
-                      <li key={service} className="flex items-start gap-2.5 text-white/70 text-sm leading-snug">
-                        <span className="mt-[0.45rem] w-1 h-1 rounded-full bg-[#00c2a8] flex-shrink-0" aria-hidden="true" />
+                      <li key={service} className="flex items-start gap-2.5 text-ink/78 text-sm leading-snug">
+                        <span className="mt-[0.45rem] w-1 h-1 rounded-full bg-[#0b7f71] flex-shrink-0" aria-hidden="true" />
                         {service}
                       </li>
                     ))}
                   </ul>
                   <EnquiryLink
                     enquiry={pillar.enquiry}
-                    className="mt-auto inline-flex items-center gap-2 text-[#00c2a8] text-sm font-semibold hover:gap-3 transition-all"
+                    className="mt-auto inline-flex items-center gap-2 text-[#0b7f71] text-sm font-semibold hover:gap-3 transition-all"
                   >
                     Discuss {pillar.name.toLowerCase()}
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -123,15 +123,15 @@ export function Services() {
 
         {/* Working model strip */}
         <FadeUp>
-          <div className="bg-[#0a1628] border border-[rgba(0,194,168,0.10)] rounded-md px-6 py-5 flex flex-wrap items-center gap-4">
-            <span className="text-[#00c2a8] text-[0.75rem] font-bold tracking-[0.2em] uppercase flex-shrink-0">
+          <div className="bg-[#fbfaf7] border border-[rgba(11,127,113,0.10)] rounded-md px-6 py-5 flex flex-wrap items-center gap-4">
+            <span className="text-[#0b7f71] text-[0.75rem] font-bold tracking-[0.2em] uppercase flex-shrink-0">
               Working Model
             </span>
             <ul className="flex flex-wrap gap-2">
               {WORKING_MODEL.map((tag) => (
                 <li
                   key={tag}
-                  className="bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.15)] text-white/65 text-sm px-3 py-1 rounded-sm"
+                  className="bg-[rgba(11,127,113,0.08)] border border-[rgba(11,127,113,0.15)] text-ink/75 text-sm px-3 py-1 rounded-sm"
                 >
                   {tag}
                 </li>
