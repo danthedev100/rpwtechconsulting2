@@ -55,7 +55,7 @@ export function AmbientRings() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="hidden md:block pointer-events-none fixed z-30 top-1/2 right-0 w-[min(70vh,620px)] translate-x-[38%] -translate-y-1/2 opacity-0 mix-blend-screen"
+      className="hidden md:block pointer-events-none fixed z-30 top-1/2 right-0 w-[min(70vh,620px)] translate-x-[38%] -translate-y-1/2 opacity-0 mix-blend-multiply"
     >
       <div data-spin className="relative opacity-[0.22]">
         {RINGS.map((ring, i) => (

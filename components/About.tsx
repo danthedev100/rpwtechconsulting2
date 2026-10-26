@@ -1,8 +1,7 @@
 // components/About.tsx
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
-import { SectionRule } from '@/components/SectionRule'
 import { Eyebrow } from '@/components/Eyebrow'
 import { LogoRings } from '@/components/LogoRings'
 
@@ -16,82 +15,69 @@ const FOCUS_AREAS = [
 
 export function About() {
   return (
-    <section id="about" aria-labelledby="about-title" className="relative bg-[#0d1e30] py-24 sm:py-28 px-6 border-t border-[rgba(0,194,168,0.08)]">
-      <SectionRule />
-      <div className="max-w-[1120px] mx-auto grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-20 items-center">
+    <section id="about" aria-labelledby="about-title" className="relative py-24 md:py-32 px-6">
+      <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
         {/* Portrait */}
-        <FadeUp>
-          <div className="relative max-w-sm mx-auto md:mx-0">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-4 rounded-lg bg-[radial-gradient(closest-side,rgba(0,194,168,0.25),transparent)] blur-2xl"
-            />
-            <div aria-hidden="true" className="absolute -bottom-3 -right-3 w-full h-full rounded-md border border-[rgba(0,194,168,0.35)]" />
-            <LogoRings
-              data-anim="rings"
-              hairline
-              strokeWidth={1.5}
-              className="absolute -top-16 -left-14 w-32 h-auto opacity-80"
-            />
-            <div data-anim="reveal" className="relative aspect-[4/5] rounded-md overflow-hidden ring-1 ring-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+        <FadeUp className="lg:col-span-5">
+          <div className="relative max-w-md mx-auto lg:mx-0">
+            <div data-anim="reveal" className="relative aspect-[4/5] rounded-[28px] overflow-hidden bg-[#efe9df]">
               <Image
                 src="/media/richard-portrait.jpg"
                 alt="Richard Warren, Principal Consultant at RPW Technical Consulting"
                 fill
-                sizes="(min-width: 768px) 384px, 90vw"
+                sizes="(min-width: 1024px) 448px, 90vw"
                 className="object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[rgba(6,8,16,0.9)] to-transparent p-5 pt-16">
-                <p className="text-white font-bold">Richard Warren</p>
-                <p className="text-[#00c2a8] text-xs tracking-[0.2em] uppercase">Principal Consultant</p>
-              </div>
             </div>
+            <LogoRings
+              data-anim="rings"
+              hairline
+              strokeWidth={2}
+              className="absolute -bottom-10 -right-8 w-32 h-auto"
+            />
           </div>
         </FadeUp>
 
         {/* Content */}
-        <FadeUp>
-          <Eyebrow>About</Eyebrow>
-          <h2 id="about-title" data-anim="split" className="text-white text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold leading-[1.15] tracking-tight mb-2">
-            Richard Warren
-          </h2>
-          <p className="text-white/40 text-sm mb-7">
-            Independent Lead Consultant · RPW Technical Consulting (FM) Ltd
+        <FadeUp className="lg:col-span-7">
+          <Eyebrow index="05">About</Eyebrow>
+          <p className="font-serif text-ink text-[clamp(2rem,3.8vw,3.25rem)] leading-[1.08] mb-10">
+            Senior estates experience, applied independently —{' '}
+            <em className="text-ink/55">so the evidence stands up when it matters.</em>
           </p>
 
-          <p className="border-l-2 border-[#00c2a8] pl-5 mb-7 text-white/85 text-lg sm:text-xl leading-relaxed font-medium">
-            Senior estates experience, applied independently — so the evidence stands up when it
-            matters.
-          </p>
+          <div className="mb-6">
+            <h2 id="about-title" className="text-ink text-xl font-semibold">
+              Richard Warren
+            </h2>
+            <p className="text-ink/60 text-sm">Independent Lead Consultant · RPW Technical Consulting (FM) Ltd</p>
+          </div>
 
-          <p className="text-white/60 text-base leading-relaxed mb-8">
+          <p className="text-ink/75 text-lg leading-relaxed mb-10 max-w-2xl">
             Led by Richard Warren, with an emphasis on technical assurance that holds up under
             inspection. Decades of estates leadership across healthcare, public sector, and
             complex infrastructure underpin a pragmatic, data-led approach — prioritising safe
             systems of work, transparent compliance evidence, and confident decision-making.
           </p>
 
-          {/* Focus areas */}
-          <div className="mb-9">
-            <p className="text-white/35 text-[0.75rem] tracking-[0.15em] uppercase mb-3">Focus Areas</p>
-            <ul className="flex flex-wrap gap-2">
-              {FOCUS_AREAS.map((area) => (
-                <li
-                  key={area}
-                  className="bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.20)] text-[#00c2a8] text-[0.8rem] font-mono px-3 py-1 rounded-sm hover:bg-[rgba(0,194,168,0.18)] hover:-translate-y-px transition-all duration-150"
-                >
-                  {area}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className="text-[0.8rem] tracking-[0.18em] uppercase text-ink/55 mb-4">Focus areas</p>
+          <ul className="flex flex-wrap gap-2 mb-10">
+            {FOCUS_AREAS.map((area) => (
+              <li
+                key={area}
+                className="border border-ink/20 text-ink/85 text-sm px-4 py-2 rounded-full hover:bg-ink hover:text-[#f7f4ee] transition-colors duration-200"
+              >
+                {area}
+              </li>
+            ))}
+          </ul>
 
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 text-white font-semibold border-b border-[#00c2a8] pb-1 hover:text-[#00c2a8] transition-colors"
+            className="group inline-flex items-center gap-2 bg-ink text-[#f7f4ee] pl-6 pr-5 py-3.5 rounded-full hover:bg-[#5b36d6] transition-colors duration-300"
           >
             Talk to Richard directly
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
           </a>
         </FadeUp>
       </div>

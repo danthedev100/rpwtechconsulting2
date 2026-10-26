@@ -65,7 +65,7 @@ export function HeroRings() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none absolute z-[1] right-[-35%] top-[4%] w-[105vw] sm:right-[-14%] sm:top-[4%] sm:w-[70vw] lg:right-[-4%] lg:top-[3%] lg:w-[min(48vw,720px)] opacity-50 sm:opacity-75 mix-blend-screen"
+      className="pointer-events-none absolute z-[1] right-[-35%] top-[4%] w-[105vw] sm:right-[-14%] sm:top-[4%] sm:w-[70vw] lg:right-[-4%] lg:top-[3%] lg:w-[min(48vw,720px)] opacity-50 sm:opacity-75 mix-blend-multiply"
     >
       <div data-parallax>
         <LogoRingsSplit />

@@ -1,10 +1,13 @@
 // app/layout.tsx
 import type { Metadata, Viewport } from 'next'
+import { Instrument_Serif } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { JsonLd } from '@/components/JsonLd'
 import { SITE } from '@/lib/site'
 import './globals.css'
+
+const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-instrument' })
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -49,8 +52,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#060810',
-  colorScheme: 'dark',
+  themeColor: '#f7f4ee',
+  colorScheme: 'light',
 }
 
 const organisationJsonLd = {
@@ -84,7 +87,7 @@ const organisationJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+    <html lang="en-GB" className={`${GeistSans.variable} ${GeistMono.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -96,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[#00c2a8] focus:text-[#0a0e1c] focus:px-4 focus:py-2 focus:rounded-sm focus:font-bold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-[#5b36d6] focus:text-white focus:px-4 focus:py-2 focus:rounded-sm focus:font-bold"
         >
           Skip to content
         </a>

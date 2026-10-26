@@ -2,28 +2,39 @@
 import { Plus } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
 import { SectionRule } from '@/components/SectionRule'
-import { SectionHeader } from '@/components/SectionHeader'
+import { Eyebrow } from '@/components/Eyebrow'
 import { FAQS } from '@/lib/faq'
 
 export function FAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="relative bg-[#0a1628] py-24 sm:py-28 px-6 border-t border-white/[0.04]">
+    <section id="faq" aria-labelledby="faq-title" className="relative bg-white py-24 md:py-32 px-6">
       <SectionRule />
-      <div className="max-w-[820px] mx-auto">
-        <SectionHeader id="faq-title" eyebrow="FAQ" title="Questions, answered." />
+      <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-32">
+            <div data-anim="fade">
+              <Eyebrow index="06">FAQ</Eyebrow>
+            </div>
+            <h2 id="faq-title" data-anim="split" className="font-serif text-ink text-[clamp(2.5rem,5vw,4rem)] leading-[1]">
+              Questions, <em className="text-ink/55">answered.</em>
+            </h2>
+          </div>
+        </div>
 
-        <FadeUp>
-          <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
-            {FAQS.map((item) => (
-              <details key={item.q} className="group py-1">
-                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none py-5 text-white text-base sm:text-lg font-semibold hover:text-[#00c2a8] transition-colors [&::-webkit-details-marker]:hidden">
-                  {item.q}
-                  <Plus
-                    className="w-5 h-5 flex-shrink-0 text-[#00c2a8] transition-transform duration-200 group-open:rotate-45"
-                    aria-hidden="true"
-                  />
+        <FadeUp className="lg:col-span-8">
+          <div className="border-t border-ink/[0.12]">
+            {FAQS.map((item, i) => (
+              <details key={item.q} className="group border-b border-ink/[0.12]">
+                <summary className="flex items-start gap-5 cursor-pointer list-none py-7 text-ink [&::-webkit-details-marker]:hidden">
+                  <span className="font-mono text-sm text-[#5b36d6] pt-2 w-6 flex-shrink-0">0{i + 1}</span>
+                  <span className="flex-1 font-serif text-[1.75rem] leading-tight group-hover:text-[#5b36d6] transition-colors">
+                    {item.q}
+                  </span>
+                  <span className="mt-1 w-9 h-9 flex-shrink-0 rounded-full border border-ink/20 flex items-center justify-center group-open:bg-ink group-open:text-[#f7f4ee] transition-colors">
+                    <Plus className="w-4 h-4 transition-transform duration-200 group-open:rotate-45" aria-hidden="true" />
+                  </span>
                 </summary>
-                <p className="text-white/60 text-base leading-relaxed pb-6 pr-10">{item.a}</p>
+                <p className="text-ink/72 text-lg leading-relaxed pb-8 pl-11 pr-14">{item.a}</p>
               </details>
             ))}
           </div>

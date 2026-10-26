@@ -1,86 +1,58 @@
 // components/Contact.tsx
-import { Clock, Mail, MapPin } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { FadeUp } from '@/components/FadeUp'
-import { SectionRule } from '@/components/SectionRule'
 import { Eyebrow } from '@/components/Eyebrow'
 import { ConvergeRings } from '@/components/ConvergeRings'
 import { ContactForm } from '@/components/ContactForm'
 import { SITE } from '@/lib/site'
 
 const DETAILS = [
-  {
-    icon: Mail,
-    label: 'Email',
-    value: SITE.email,
-    href: `mailto:${SITE.email}`,
-  },
-  { icon: Clock, label: 'Response time', value: 'Within one business day' },
-  { icon: MapPin, label: 'Based in', value: `${SITE.region} · Remote & on-site` },
+  { label: 'Response time', value: 'Within one business day' },
+  { label: 'Based in', value: `${SITE.region} · Remote & on-site` },
 ]
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-title"
-      className="relative bg-[#0d1e30] py-24 sm:py-28 px-6 border-t border-[rgba(0,194,168,0.10)] overflow-hidden"
-    >
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-[radial-gradient(closest-side,rgba(0,194,168,0.10),transparent)]"
-      />
-      <SectionRule />
-      <ConvergeRings className="hidden lg:block absolute left-[max(2rem,calc(50%-560px))] bottom-10 w-[300px] opacity-35 mix-blend-screen" />
-      <div className="relative max-w-[1120px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-16 items-start">
-          {/* Left: copy */}
-          <FadeUp>
-            <Eyebrow>Get in Touch</Eyebrow>
-            <h2
-              id="contact-title"
-              data-anim="split"
-              className="text-white text-[clamp(1.75rem,3.5vw,2.5rem)] font-extrabold mb-5 leading-[1.15] tracking-tight"
-            >
-              Ready to discuss
-              <br />
-              your project?
-            </h2>
-            <p className="text-white/55 text-base sm:text-lg leading-relaxed mb-10 max-w-md">
-              Whether you need a compliance audit, asset strategy support, or specialist
-              technical input — get in touch and Richard will respond within one business day.
-            </p>
+    <section id="contact" aria-labelledby="contact-title" className="relative bg-[#efe9df] py-24 md:py-32 px-6 overflow-hidden">
+      <ConvergeRings className="hidden lg:block absolute left-[max(2rem,calc(50%-600px))] bottom-12 w-[260px] opacity-60" />
+      <div className="relative max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Left: copy */}
+        <FadeUp className="lg:col-span-5">
+          <Eyebrow index="07">Get in touch</Eyebrow>
+          <h2
+            id="contact-title"
+            data-anim="split"
+            className="font-serif text-ink text-[clamp(2.75rem,6vw,5rem)] leading-[0.98] tracking-[-0.01em] mb-8"
+          >
+            Ready to discuss your <em className="text-[#5b36d6]">project?</em>
+          </h2>
+          <p className="text-ink/72 text-lg leading-relaxed mb-10 max-w-md">
+            Whether you need a compliance audit, asset strategy support, or specialist technical
+            input — get in touch and Richard will respond within one business day.
+          </p>
 
-            <dl className="space-y-5">
-              {DETAILS.map((d) => {
-                const Icon = d.icon
-                return (
-                  <div key={d.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 flex-shrink-0 rounded-md bg-[rgba(0,194,168,0.08)] border border-[rgba(0,194,168,0.2)] flex items-center justify-center text-[#00c2a8]">
-                      <Icon className="w-4 h-4" aria-hidden="true" />
-                    </div>
-                    <div className="min-w-0">
-                      <dt className="text-white/35 text-[0.7rem] tracking-[0.2em] uppercase mb-0.5">{d.label}</dt>
-                      <dd className="text-white/80 text-base break-words">
-                        {d.href ? (
-                          <a href={d.href} className="hover:text-[#00c2a8] transition-colors duration-200">
-                            {d.value}
-                          </a>
-                        ) : (
-                          d.value
-                        )}
-                      </dd>
-                    </div>
-                  </div>
-                )
-              })}
-            </dl>
-          </FadeUp>
+          <a
+            href={`mailto:${SITE.email}`}
+            className="group inline-flex items-center gap-2 text-ink text-base sm:text-lg border-b border-ink/30 pb-1 hover:border-ink transition-colors break-all mb-10"
+          >
+            {SITE.email}
+            <ArrowUpRight className="w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+          </a>
 
-          {/* Right: form */}
-          <FadeUp>
-            <ContactForm />
-          </FadeUp>
-        </div>
+          <dl className="grid grid-cols-2 gap-6 max-w-md lg:mb-56">
+            {DETAILS.map((d) => (
+              <div key={d.label} className="border-t border-ink/[0.15] pt-4">
+                <dt className="text-ink/55 text-[0.75rem] tracking-[0.18em] uppercase mb-1">{d.label}</dt>
+                <dd className="text-ink/85">{d.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </FadeUp>
+
+        {/* Right: form */}
+        <FadeUp className="lg:col-span-7">
+          <ContactForm />
+        </FadeUp>
       </div>
     </section>
   )
